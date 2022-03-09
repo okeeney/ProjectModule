@@ -1,0 +1,15 @@
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\ImageTextExtraction
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\appsettings.Development.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\appsettings.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\aws-lambda-tools-defaults.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\bundleconfig.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\ImageTextExtraction.deps.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\ImageTextExtraction.runtimeconfig.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\ImageTextExtraction.pdb
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.APIGatewayEvents.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.ApplicationLoadBalancerEvents.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.AspNetCoreServer.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.Core.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.Logging.AspNetCore.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.Serialization.SystemTextJson.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\ImageTextExtraction.dll
