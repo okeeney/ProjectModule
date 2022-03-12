@@ -29,3 +29,8 @@ C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Release\
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Release\net6.0\linux-x64\ImageTextExtraction.pdb
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Release\net6.0\linux-x64\ImageTextExtraction.genruntimeconfig.cache
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Release\net6.0\linux-x64\ref\ImageTextExtraction.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\linux-x64\AWSSDK.Core.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\linux-x64\AWSSDK.S3.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\linux-x64\AWSSDK.Textract.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Release\net6.0\linux-x64\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Release\net6.0\linux-x64\scopedcss\projectbundle\ImageTextExtraction.bundle.scp.css

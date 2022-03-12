@@ -17,7 +17,4 @@
     <PackageReference Include="AWSSDK.S3" Version="3.7.8.5" />
     <PackageReference Include="AWSSDK.Textract" Version="3.7.4.5" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\images\" />
-  </ItemGroup>
 </Project>

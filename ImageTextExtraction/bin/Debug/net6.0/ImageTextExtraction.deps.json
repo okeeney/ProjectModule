@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "ImageTextExtraction/1.0.0": {
         "dependencies": {
+          "AWSSDK.S3": "3.7.8.5",
+          "AWSSDK.Textract": "3.7.4.5",
           "Amazon.Lambda.AspNetCoreServer": "7.0.1"
         },
         "runtime": {
@@ -75,6 +77,36 @@
           "lib/net6.0/Amazon.Lambda.Serialization.SystemTextJson.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "AWSSDK.Core/3.7.8.7": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.8.7"
+          }
+        }
+      },
+      "AWSSDK.S3/3.7.8.5": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.8.7"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.8.5"
+          }
+        }
+      },
+      "AWSSDK.Textract/3.7.4.5": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.8.7"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Textract.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.4.5"
           }
         }
       },
@@ -166,6 +198,27 @@
       "sha512": "sha512-ENIKiMBVUegIbwHwg4P0XjJKXazTlCS05bqRKrn9BTUWDZQjPp5RaFs1h2+22H4SiqWosNxKrNCeiXyHJnwOHw==",
       "path": "amazon.lambda.serialization.systemtextjson/2.2.0",
       "hashPath": "amazon.lambda.serialization.systemtextjson.2.2.0.nupkg.sha512"
+    },
+    "AWSSDK.Core/3.7.8.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v3OnjYP2pbKqcW+JO7scQPohXigahwmwd8ICNS/GdsSMW7jIxnqWwoNrI3/OcVRN6+dBwUe5QpCT/2d9k9w85w==",
+      "path": "awssdk.core/3.7.8.7",
+      "hashPath": "awssdk.core.3.7.8.7.nupkg.sha512"
+    },
+    "AWSSDK.S3/3.7.8.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZAp8gQxQx2d5+zqyEA8gbJ5Y4F8v98qmy5PuWxkS3lJIQR0Ll9sH3QuLaOTAkXJnjTRMN+Lua2xOnhhycVcxPg==",
+      "path": "awssdk.s3/3.7.8.5",
+      "hashPath": "awssdk.s3.3.7.8.5.nupkg.sha512"
+    },
+    "AWSSDK.Textract/3.7.4.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9nv7i+HvjivM2q7Qn0uoxTGOKPHzS7ysKBDKy+56au5qg16L9kUk1LVxoCtXPSIRdsRztRxPHS/yB/rGmO+/jA==",
+      "path": "awssdk.textract/3.7.4.5",
+      "hashPath": "awssdk.textract.3.7.4.5.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/2.1.0": {
       "type": "package",

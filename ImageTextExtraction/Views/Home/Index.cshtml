@@ -1,0 +1,47 @@
+﻿@using ImageTextExtraction.Controllers
+@{
+    ViewData["Title"] = "Home Page";
+    var preSignedUrl = ViewData["signedURL"];
+}
+
+<script runat="server">
+    void Page_Load(Object sender, EventArgs e)
+    {
+        // Manually register the event-handling method for
+        // the Click event of the Button control.
+        submitBtn.Click += new EventHandler(this.SubmitBtn_Click);
+    }
+
+    void SubmitBtn_Click (Object RTCDtmfSender, EventArgs e)
+    {
+        var filePath = document.getElementById('imageInput').value;
+        var url = @preSignedUrl;
+        HomeController.UploadObject(filePath, url);
+    }
+
+</script>
+<div class="text-center">
+    <h1 class="display-4">Image Text Extraction Utility</h1>
+    <h2>Simply upload your image below to get started...</h2>
+</div>
+<hr />
+
+<input type="hidden" id="signedURL" value="@preSignedUrl"/>
+<div class="text-center">
+    <label for="userFile">Upload an image:</label><br /><br />
+    <input type="file" id="imageInput" name="userFile" class="button"/><br /><br />
+    <input type="button" value="Upload" OnClick="SubmitBtn_Click" class="button" id="submitBtn"/>
+</div>
+
+<hr />
+
+<div class="text-container">
+    <textarea rows="10" cols="100" id="extracted-text" readonly></textarea>
+</div>
+
+<div class="button-container">
+    <input type="button" value="Export to .docx" id="exportDOCX" class="button"/>
+    <input type="button" value="Export to .pdf" id="exportPDF" class="button"/>
+</div>
+<hr />
+

@@ -12,4 +12,7 @@ C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.Core.dll
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.Logging.AspNetCore.dll
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.Serialization.SystemTextJson.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\AWSSDK.Core.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\AWSSDK.S3.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\AWSSDK.Textract.dll
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\ImageTextExtraction.dll

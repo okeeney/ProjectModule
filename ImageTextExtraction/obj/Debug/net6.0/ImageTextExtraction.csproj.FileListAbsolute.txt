@@ -31,3 +31,8 @@ C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Debug\ne
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Debug\net6.0\ImageTextExtraction.pdb
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Debug\net6.0\ImageTextExtraction.genruntimeconfig.cache
 C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Debug\net6.0\ref\ImageTextExtraction.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Debug\net6.0\AWSSDK.S3.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Debug\net6.0\AWSSDK.Textract.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\obj\Debug\net6.0\scopedcss\projectbundle\ImageTextExtraction.bundle.scp.css

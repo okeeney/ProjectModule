@@ -1,0 +1,7 @@
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\POCTest
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\appsettings.Development.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\appsettings.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\POCTest.dll
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\POCTest.deps.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\POCTest.runtimeconfig.json
+C:\Users\USER\Desktop\ProjectModule\ProjectCode\ImageTextExtraction\bin\Release\net6.0\publish\POCTest.pdb
