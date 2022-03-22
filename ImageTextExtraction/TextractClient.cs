@@ -33,16 +33,16 @@ public class TextractClient
         var localFile = "temp";
 
         using(var textractClient = new AmazonTextractClient(RegionEndpoint.EUWest1))
-        using(var s3Client = new AmazonS3Client(RegionEndpoint.EUWest1))
+        //using(var s3Client = new AmazonS3Client(RegionEndpoint.EUWest1))
         {
-            Console.WriteLine($"Upload {localFile} to {s3Bucket} bucket");
-            var putRequest = new PutObjectRequest
-            {
-                BucketName = s3Bucket,
-                FilePath = localFile,
-                Key = Path.GetFileName(localFile)
-            };
-            await s3Client.PutObjectAsync(putRequest);
+            //Console.WriteLine($"Upload {localFile} to {s3Bucket} bucket");
+            //var putRequest = new PutObjectRequest
+            //{
+            //    BucketName = s3Bucket,
+            //    FilePath = localFile,
+            //    Key = Path.GetFileName(localFile)
+            //};
+            //await s3Client.PutObjectAsync(putRequest);
 
             Console.WriteLine("Start document text detection.");
             var startResponse = await textractClient.StartDocumentTextDetectionAsync(new StartDocumentTextDetectionRequest
@@ -52,7 +52,7 @@ public class TextractClient
                     S3Object = new Amazon.Textract.Model.S3Object
                     {
                         Bucket = s3Bucket,
-                        Name = putRequest.Key
+                        Name = "temp"
                     }
                 }
             });

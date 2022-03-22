@@ -112,7 +112,13 @@ namespace ImageTextExtraction.Controllers
             TextractClient textractClient = new TextractClient();
             await textractClient.StartDetectAsync();
             extractedText = textractClient.getBlockText();
-            ViewData["extractedText"] = extractedText;
+            string result = "";
+            foreach(string s in extractedText)
+            {
+                result += s + " ";
+            }
+
+            ViewData["result"] = result;
 
             return View();
         }

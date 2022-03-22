@@ -4,8 +4,6 @@
 
 @{
     ViewData["Title"] = "Home Page";
-    var preSignedUrl = ViewData["signedURL"];
-    var extractedText = ViewData["extractedText"];
 }
  
 <script
@@ -22,7 +20,7 @@
 </div>
 <hr />
 
-<input type="hidden" id="signedURL" value="@preSignedUrl"/>
+@*<input type="hidden" id="signedURL" value=@ViewData["signedURL"]/>
 <div class="text-center" id="form-container">
     <form method="post" id="aws_upload_form" enctype="multipart/form-data">
         <label for="userFile">Upload an image:</label><br /><br />
@@ -30,7 +28,7 @@
         <input type="submit" value="Upload" OnClick="SubmitBtn_Click" class="button" id="submitBtn"/>
     </form>
 </div>
-<hr />
+<hr />*@
 
 <form enctype="multipart/form-data" method="post">
     <dl>
@@ -47,7 +45,7 @@
 <hr />
 
 <div class="text-container">
-    <textarea rows="10" cols="100" id="extracted-text" value="@extractedText"></textarea>
+    <textarea rows="10" cols="100" id="extracted-text" value=@ViewData["result"]></textarea>
 </div>
 
 <div class="button-container">
