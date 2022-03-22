@@ -1,25 +1,21 @@
 ﻿@using ImageTextExtraction.Controllers
+@using ImageTextExtraction.Models
+@model FileUploadFormModel
+
 @{
     ViewData["Title"] = "Home Page";
     var preSignedUrl = ViewData["signedURL"];
+    var extractedText = ViewData["extractedText"];
 }
-
-<script runat="server">
-    void Page_Load(Object sender, EventArgs e)
-    {
-        // Manually register the event-handling method for
-        // the Click event of the Button control.
-        submitBtn.Click += new EventHandler(this.SubmitBtn_Click);
-    }
-
-    void SubmitBtn_Click (Object RTCDtmfSender, EventArgs e)
-    {
-        var filePath = document.getElementById('imageInput').value;
-        var url = @preSignedUrl;
-        HomeController.UploadObject(filePath, url);
-    }
-
+ 
+<script
+	src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous">
 </script>
+<script src="~/js/site.js"></script>
+		
+
 <div class="text-center">
     <h1 class="display-4">Image Text Extraction Utility</h1>
     <h2>Simply upload your image below to get started...</h2>
@@ -27,16 +23,31 @@
 <hr />
 
 <input type="hidden" id="signedURL" value="@preSignedUrl"/>
-<div class="text-center">
-    <label for="userFile">Upload an image:</label><br /><br />
-    <input type="file" id="imageInput" name="userFile" class="button"/><br /><br />
-    <input type="button" value="Upload" OnClick="SubmitBtn_Click" class="button" id="submitBtn"/>
+<div class="text-center" id="form-container">
+    <form method="post" id="aws_upload_form" enctype="multipart/form-data">
+        <label for="userFile">Upload an image:</label><br /><br />
+        <input type="file" id="imageInput" name="userFile" class="button"/><br /><br />
+        <input type="submit" value="Upload" OnClick="SubmitBtn_Click" class="button" id="submitBtn"/>
+    </form>
 </div>
+<hr />
+
+<form enctype="multipart/form-data" method="post">
+    <dl>
+        <dt>
+            <label asp-for="@Model.FormFile"></label>
+        </dt>
+        <dd>
+            <input asp-for="@Model.FormFile" type="file"/>
+        </dd>
+    </dl>
+    <input asp-page-handler="Upload" class="button" type="submit" value="Upload" />
+ </form>
 
 <hr />
 
 <div class="text-container">
-    <textarea rows="10" cols="100" id="extracted-text" readonly></textarea>
+    <textarea rows="10" cols="100" id="extracted-text" value="@extractedText"></textarea>
 </div>
 
 <div class="button-container">

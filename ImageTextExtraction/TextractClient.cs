@@ -9,27 +9,28 @@ using Amazon.S3;
 using Amazon.S3.Model;
 public class TextractClient
 {
-	
-    
-    static async Task Main(string[] args)
-    {
-        try {
+	List<BlockType> blockTypes = new List<BlockType>();
+    List<String> blockText = new List<string>();
 
-            await StartDetectAsync();
-        } 
-        catch(Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
-    }
+    //static async Task Main(string[] args)
+    //{
+    //    try {
 
-    private static async Task StartDetectAsync()
+    //        await StartDetectAsync();
+    //    } 
+    //    catch(Exception e)
+    //    {
+    //        Console.WriteLine(e.Message);
+    //    }
+    //}
+
+    public async Task StartDetectAsync()
     {
         //My bucket on aws.amazon
         var s3Bucket = "oisinsapps";
 
         //Image to be uploaded to S3 for textract processing
-        var localFile = "Images/maxresdefault.jpg";
+        var localFile = "temp";
 
         using(var textractClient = new AmazonTextractClient(RegionEndpoint.EUWest1))
         using(var s3Client = new AmazonS3Client(RegionEndpoint.EUWest1))
@@ -81,6 +82,8 @@ public class TextractClient
                     foreach (var block in getDetectionResponse.Blocks)
                     {
                         Console.WriteLine($"Type {block.BlockType}, Text: {block.Text}");
+                        blockTypes.Add(block.BlockType);
+                        blockText.Add(block.Text);
                     }
 
                     //Check to see if there are more pages of data. Break if there isn't.
@@ -100,5 +103,10 @@ public class TextractClient
             }
         }
     }
+
+    public List<String> getBlockText()
+    {
+        return this.blockText;
     }
+ }
 

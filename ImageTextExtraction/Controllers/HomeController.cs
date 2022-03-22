@@ -7,11 +7,15 @@ using System.Threading.Tasks;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Microsoft.Extensions.Logging;
+using ImageTextExtraction.Models;
 
 namespace ImageTextExtraction.Controllers
 {
     public class HomeController : Controller
     {
+
+        // GET: HomeController
+
         private readonly ILogger<HomeController> _logger;
 
 
@@ -22,24 +26,24 @@ namespace ImageTextExtraction.Controllers
         }
 
 
-        public static void UploadObject(string filePath, string url)
-        {
-            HttpWebRequest httpRequest = WebRequest.Create(url) as HttpWebRequest;
-            httpRequest.Method = "PUT";
-            using (Stream dataStream = httpRequest.GetRequestStream())
-            {
-                var buffer = new byte[8000];
-                using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-                {
-                    int bytesRead = 0;
-                    while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) > 0)
-                    {
-                        dataStream.Write(buffer, 0, bytesRead);
-                    }
-                }
-            }
-            HttpWebResponse response = httpRequest.GetResponse() as HttpWebResponse;
-        }
+        //public static void UploadObject(string filePath, string url)
+        //{
+        //    HttpWebRequest httpRequest = WebRequest.Create(url) as HttpWebRequest;
+        //    httpRequest.Method = "PUT";
+        //    using (Stream dataStream = httpRequest.GetRequestStream())
+        //    {
+        //        var buffer = new byte[8000];
+        //        using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+        //        {
+        //            int bytesRead = 0;
+        //            while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) > 0)
+        //            {
+        //                dataStream.Write(buffer, 0, bytesRead);
+        //            }
+        //        }
+        //    }
+        //    HttpWebResponse response = httpRequest.GetResponse() as HttpWebResponse;
+        //}
 
         public string GeneratePreSignedURL(string bucketName, string objectKey, double duration)
         {
@@ -84,6 +88,36 @@ namespace ImageTextExtraction.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(FileUploadFormModel FileUpload)
+        {
+            List<String> extractedText = new List<String>();
+            string bucketName = "oisinsapps";
+            string fileKey = "temp";
+            using (var memoryStream = new MemoryStream())
+            {
+                await FileUpload.FormFile.CopyToAsync(memoryStream);
+
+                if(memoryStream.Length < 10000000)
+                {
+                    await S3Upload.UploadFileAsync(memoryStream, bucketName, fileKey);
+                }
+                else
+                {
+                    ModelState.AddModelError("File", "The file is too large.");
+                }
+
+            }
+            TextractClient textractClient = new TextractClient();
+            await textractClient.StartDetectAsync();
+            extractedText = textractClient.getBlockText();
+            ViewData["extractedText"] = extractedText;
+
+            return View();
+        }
+
+       
     }
 
     
