@@ -46,15 +46,19 @@
           "dependencies": {
             "AWSSDK.S3": {
               "target": "Package",
-              "version": "[3.7.8.5, )"
+              "version": "[3.7.8.10, )"
             },
             "AWSSDK.Textract": {
               "target": "Package",
-              "version": "[3.7.4.5, )"
+              "version": "[3.7.4.10, )"
             },
             "Amazon.Lambda.AspNetCoreServer": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.1.0, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.1, )"
             }
           },
           "imports": [

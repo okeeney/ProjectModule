@@ -10,7 +10,8 @@ using Amazon.S3.Model;
 public class TextractClient
 {
 	List<BlockType> blockTypes = new List<BlockType>();
-    List<String> blockText = new List<string>();
+    List<string> blockText = new List<string>();
+    List<string> lineText = new List<string>();
 
     //static async Task Main(string[] args)
     //{
@@ -84,6 +85,10 @@ public class TextractClient
                         Console.WriteLine($"Type {block.BlockType}, Text: {block.Text}");
                         blockTypes.Add(block.BlockType);
                         blockText.Add(block.Text);
+                        if (block.BlockType == "LINE")
+                        {
+                            lineText.Add(block.Text);
+                        }
                     }
 
                     //Check to see if there are more pages of data. Break if there isn't.
@@ -104,9 +109,14 @@ public class TextractClient
         }
     }
 
-    public List<String> getBlockText()
+    public List<string> getBlockText()
     {
         return this.blockText;
+    }
+
+    public List<string> getLineText()
+    {
+        return this.lineText;
     }
  }
 

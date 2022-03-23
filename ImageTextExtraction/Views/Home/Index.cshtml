@@ -1,18 +1,12 @@
 ﻿@using ImageTextExtraction.Controllers
 @using ImageTextExtraction.Models
-@model FileUploadFormModel
+@model FileUploadFormModel 
+
 
 @{
     ViewData["Title"] = "Home Page";
+    var output = ViewData["result"];
 }
- 
-<script
-	src="https://code.jquery.com/jquery-3.6.0.min.js"
-	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-	crossorigin="anonymous">
-</script>
-<script src="~/js/site.js"></script>
-		
 
 <div class="text-center">
     <h1 class="display-4">Image Text Extraction Utility</h1>
@@ -20,23 +14,13 @@
 </div>
 <hr />
 
-@*<input type="hidden" id="signedURL" value=@ViewData["signedURL"]/>
-<div class="text-center" id="form-container">
-    <form method="post" id="aws_upload_form" enctype="multipart/form-data">
-        <label for="userFile">Upload an image:</label><br /><br />
-        <input type="file" id="imageInput" name="userFile" class="button"/><br /><br />
-        <input type="submit" value="Upload" OnClick="SubmitBtn_Click" class="button" id="submitBtn"/>
-    </form>
-</div>
-<hr />*@
-
 <form enctype="multipart/form-data" method="post">
     <dl>
         <dt>
             <label asp-for="@Model.FormFile"></label>
         </dt>
         <dd>
-            <input asp-for="@Model.FormFile" type="file"/>
+            <input asp-for="@Model.FormFile" type="file" class="button"/>
         </dd>
     </dl>
     <input asp-page-handler="Upload" class="button" type="submit" value="Upload" />
@@ -44,13 +28,11 @@
 
 <hr />
 
-<div class="text-container">
-    <textarea rows="10" cols="100" id="extracted-text" value=@ViewData["result"]></textarea>
-</div>
 
-<div class="button-container">
-    <input type="button" value="Export to .docx" id="exportDOCX" class="button"/>
-    <input type="button" value="Export to .pdf" id="exportPDF" class="button"/>
-</div>
-<hr />
+
+<textarea rows="10" cols="100" id="display-text">@output</textarea> 
+<p><input type="submit" value="Export to PDF" id="exportPDF" class="button" onclick="location.href='@Url.Action("ExportToPDF", "Home", new {output = @output})'"/></p>
+
+
+
 

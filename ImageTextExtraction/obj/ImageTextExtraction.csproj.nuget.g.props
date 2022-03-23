@@ -14,8 +14,9 @@
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\USER\.nuget\packages\awssdk.core\3.7.8.7</PkgAWSSDK_Core>
-    <PkgAWSSDK_Textract Condition=" '$(PkgAWSSDK_Textract)' == '' ">C:\Users\USER\.nuget\packages\awssdk.textract\3.7.4.5</PkgAWSSDK_Textract>
-    <PkgAWSSDK_S3 Condition=" '$(PkgAWSSDK_S3)' == '' ">C:\Users\USER\.nuget\packages\awssdk.s3\3.7.8.5</PkgAWSSDK_S3>
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\USER\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\USER\.nuget\packages\awssdk.core\3.7.9</PkgAWSSDK_Core>
+    <PkgAWSSDK_Textract Condition=" '$(PkgAWSSDK_Textract)' == '' ">C:\Users\USER\.nuget\packages\awssdk.textract\3.7.4.10</PkgAWSSDK_Textract>
+    <PkgAWSSDK_S3 Condition=" '$(PkgAWSSDK_S3)' == '' ">C:\Users\USER\.nuget\packages\awssdk.s3\3.7.8.10</PkgAWSSDK_S3>
   </PropertyGroup>
 </Project>

@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using Microsoft.AspNetCore.Mvc;
 using POCTest.Models;
 using System.Diagnostics;
 using System.IO;
@@ -9,10 +13,12 @@ using Amazon.S3.Model;
 using Microsoft.Extensions.Logging;
 using ImageTextExtraction.Models;
 
+
 namespace ImageTextExtraction.Controllers
 {
     public class HomeController : Controller
     {
+        
 
         // GET: HomeController
 
@@ -25,56 +31,15 @@ namespace ImageTextExtraction.Controllers
             _logger = logger;
         }
 
-
-        //public static void UploadObject(string filePath, string url)
-        //{
-        //    HttpWebRequest httpRequest = WebRequest.Create(url) as HttpWebRequest;
-        //    httpRequest.Method = "PUT";
-        //    using (Stream dataStream = httpRequest.GetRequestStream())
-        //    {
-        //        var buffer = new byte[8000];
-        //        using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-        //        {
-        //            int bytesRead = 0;
-        //            while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) > 0)
-        //            {
-        //                dataStream.Write(buffer, 0, bytesRead);
-        //            }
-        //        }
-        //    }
-        //    HttpWebResponse response = httpRequest.GetResponse() as HttpWebResponse;
-        //}
-
-        public string GeneratePreSignedURL(string bucketName, string objectKey, double duration)
-        {
-            using var s3Client = GetIAmazonS3Client();
-
-            var request = new GetPreSignedUrlRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                Protocol = Protocol.HTTPS,
-                Verb = HttpVerb.PUT,
-                Expires = DateTime.UtcNow.AddHours(duration)
-            };
-
-            string url = s3Client.GetPreSignedURL(request);
-            return url;
-        }
+   
 
         private IAmazonS3 GetIAmazonS3Client()
         {
-            // Future updates to this library should provide a constructor that allows region, another allowing region & credentials to be provided.
             return new AmazonS3Client();
         }
 
         public IActionResult Index()
         {
-            string bucketName = "oisinsapps";
-            string objectKey = "userImage";
-            double duration = 1.0;
-            string signedURL = GeneratePreSignedURL(bucketName, objectKey, duration);
-            ViewData["signedURL"] = signedURL;
             return View();
         }
 
@@ -92,9 +57,9 @@ namespace ImageTextExtraction.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(FileUploadFormModel FileUpload)
         {
-            List<String> extractedText = new List<String>();
             string bucketName = "oisinsapps";
             string fileKey = "temp";
+
             using (var memoryStream = new MemoryStream())
             {
                 await FileUpload.FormFile.CopyToAsync(memoryStream);
@@ -109,18 +74,36 @@ namespace ImageTextExtraction.Controllers
                 }
 
             }
+
+            //Instantiate Textract local client
             TextractClient textractClient = new TextractClient();
+            //Begin extraction
             await textractClient.StartDetectAsync();
-            extractedText = textractClient.getBlockText();
+
+            List<string>extractedText = textractClient.getLineText();
             string result = "";
-            foreach(string s in extractedText)
+
+            foreach (string s in extractedText)
             {
-                result += s + " ";
+                result += s + "\n";
             }
-
             ViewData["result"] = result;
-
+            
             return View();
+        }
+
+        public void CreatePDF(string output)
+        {
+            string fileToDownload = "https://localhost:53484/Home/ExportToPDF";
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);  
+
+            DocumentCreatorClient docClient = new DocumentCreatorClient();
+            byte[] stream = docClient.GeneratePdf(output);
+            System.IO.File.WriteAllBytes("Document.pdf", stream);
+
+            WebClient webClient = new WebClient();
+            webClient.DownloadFile(fileToDownload, filePath);
+
         }
 
        
