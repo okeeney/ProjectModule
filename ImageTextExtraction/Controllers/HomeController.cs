@@ -92,7 +92,7 @@ namespace ImageTextExtraction.Controllers
             return View();
         }
 
-        public void CreatePDF(string output)
+        public void CreatePdf(string output)
         {
             string fileToDownload = "https://localhost:53484/Home/ExportToPDF";
             string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);  
@@ -101,10 +101,12 @@ namespace ImageTextExtraction.Controllers
             byte[] stream = docClient.GeneratePdf(output);
             System.IO.File.WriteAllBytes("Document.pdf", stream);
 
-            WebClient webClient = new WebClient();
-            webClient.DownloadFile(fileToDownload, filePath);
+            //WebClient webClient = new WebClient();
+            //webClient.DownloadFile(fileToDownload, filePath);
 
         }
+
+
 
        
     }

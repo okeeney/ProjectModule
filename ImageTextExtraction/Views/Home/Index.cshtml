@@ -31,7 +31,7 @@
 
 
 <textarea rows="10" cols="100" id="display-text">@output</textarea> 
-<p><input type="submit" value="Export to PDF" id="exportPDF" class="button" onclick="location.href='@Url.Action("ExportToPDF", "Home", new {output = @output})'"/></p>
+<p><input type="submit" value="Export to PDF" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
 
 
 
