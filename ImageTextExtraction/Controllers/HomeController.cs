@@ -92,18 +92,22 @@ namespace ImageTextExtraction.Controllers
             return View();
         }
 
-        public void CreatePdf(string output)
+        public IActionResult CreatePdf(string output)
         {
-            string fileToDownload = "https://localhost:53484/Home/ExportToPDF";
-            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);  
-
+ 
             DocumentCreatorClient docClient = new DocumentCreatorClient();
             byte[] stream = docClient.GeneratePdf(output);
-            System.IO.File.WriteAllBytes("Document.pdf", stream);
 
-            //WebClient webClient = new WebClient();
-            //webClient.DownloadFile(fileToDownload, filePath);
+            return File(stream, "application/pdf");
 
+        }
+
+        public IActionResult CreateDocx(string output)
+        {
+            DocumentCreatorClient docClient = new DocumentCreatorClient();
+            byte[] stream = docClient.GenerateDocx(output);
+
+            return File(stream, "application/msword");
         }
 
 
