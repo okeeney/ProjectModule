@@ -46,11 +46,11 @@
           "dependencies": {
             "AWSSDK.S3": {
               "target": "Package",
-              "version": "[3.7.8.10, )"
+              "version": "[3.7.8.15, )"
             },
             "AWSSDK.Textract": {
               "target": "Package",
-              "version": "[3.7.4.10, )"
+              "version": "[3.7.4.15, )"
             },
             "Amazon.Lambda.AspNetCoreServer": {
               "target": "Package",
@@ -58,7 +58,31 @@
             },
             "Aspose.Words": {
               "target": "Package",
-              "version": "[22.3.0, )"
+              "version": "[22.4.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "itext7": {
               "target": "Package",

@@ -8,6 +8,7 @@
     var output = ViewData["result"];
 }
 
+
 <div class="text-center">
     <h1 class="display-4">Image Text Extraction Utility</h1>
     <h2>Simply upload your image below to get started...</h2>
@@ -23,16 +24,15 @@
             <input asp-for="@Model.FormFile" type="file" class="button"/>
         </dd>
     </dl>
-    <input asp-page-handler="Upload" class="button" type="submit" value="Upload" />
+    <input asp-page-handler="Upload" class="button" type="submit" value="Upload" /> <p><b>Depending on the amount of text, this may take a few moments...</b></p>
  </form>
 
 <hr />
 
 
-
-<textarea rows="10" cols="100" id="display-text">@output</textarea> 
-<p></p>
-<p><input type="submit" value="Export to PDF" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
+<p><label>Give the extraction a title: <input type="text" id="text-title"/></label></p>
+<textarea rows="10" cols="100" id="display-text">@output</textarea> <br />
+<p><input type="submit" value="Export to .pdf" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
 <p><input type="submit" value="Export to .docx" id="exportDOCX" class="button" onclick="location.href='@Url.Action("CreateDocx", "Home", new {output = @output})'"/></p>
 
 

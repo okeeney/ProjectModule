@@ -1,3 +1,5 @@
+using ImageTextExtraction.Models;
+
 namespace ImageTextExtraction;
 
 public class Startup
@@ -11,7 +13,7 @@ public class Startup
 
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
-    {
+    {  
         services.AddControllersWithViews();
     }
 
@@ -30,20 +32,13 @@ public class Startup
         }
 
         app.UseHttpsRedirection();
+
         app.UseStaticFiles();
 
         app.UseRouting();
 
         app.UseAuthorization();
 
-
-        //app.UseEndpoints(endpoints =>
-        //{
-        //    //endpoints.MapRazorPages();
-        //    app.MapControllerRoute(
-        //    name: "default",
-        //    pattern: "{controller=Home}/{action=Index}/{id?}");
-        //});
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllerRoute(

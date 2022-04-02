@@ -1,8 +1,4 @@
-﻿using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
-using iText.Layout.Properties;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using POCTest.Models;
 using System.Diagnostics;
 using System.IO;
@@ -24,14 +20,13 @@ namespace ImageTextExtraction.Controllers
 
         private readonly ILogger<HomeController> _logger;
 
+        private IWebHostEnvironment Environment;
 
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IWebHostEnvironment _environment)
         {
             _logger = logger;
+            Environment = _environment;
         }
-
-   
 
         private IAmazonS3 GetIAmazonS3Client()
         {
@@ -98,16 +93,18 @@ namespace ImageTextExtraction.Controllers
             DocumentCreatorClient docClient = new DocumentCreatorClient();
             byte[] stream = docClient.GeneratePdf(output);
 
-            return File(stream, "application/pdf");
+            return File(stream, "application/pdf", "ExtractedText.pdf");
 
         }
 
         public IActionResult CreateDocx(string output)
         {
+            string wwwPath = this.Environment.WebRootPath;
             DocumentCreatorClient docClient = new DocumentCreatorClient();
-            byte[] stream = docClient.GenerateDocx(output);
+            docClient.GenerateDocx(output);
+            byte[] stream = System.IO.File.ReadAllBytes(wwwPath + "\\ExtractedText.docx");
 
-            return File(stream, "application/msword");
+            return File(stream, "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "ExtractedText.docx");
         }
 
 

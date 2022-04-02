@@ -22,7 +22,7 @@ namespace ImageTextExtraction
             var document = new Document(pdf);
 
             iText.Layout.Element.Paragraph body = new iText.Layout.Element.Paragraph(text)
-                .SetTextAlignment(TextAlignment.JUSTIFIED)
+                .SetTextAlignment(TextAlignment.CENTER)
                 .SetFontSize(12);
 
             document.Add(body);
@@ -31,21 +31,13 @@ namespace ImageTextExtraction
             return stream.ToArray();
         }
 
-        public byte[] GenerateDocx(string text)
+        public void GenerateDocx(string text)
         {
             var doc = new WordDocument();
             var builder = new DocumentBuilder(doc);
             builder.Write(text);
-            doc.Save("ExtractedText.docx");
+            doc.Save("wwwroot\\ExtractedText.docx");
 
-            using (MemoryStream m = new MemoryStream())
-            {
-                using (BinaryWriter writer = new BinaryWriter(m))
-                {
-                    writer.Write(text);
-                }
-                return m.ToArray();
-            }
         }
 
         

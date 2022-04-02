@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RpwFiWB4Nlk8efMMaLAQwj9RLcm6TPybqK7Y8udRAV0=",
+  "Hash": "CTdwIYyCHsY4L3RNj7gBF65d1n49Wfchami9hWarNCU=",
   "Source": "ImageTextExtraction",
   "BasePath": "_content/ImageTextExtraction",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Desktop\\ProjectModule\\ProjectCode\\ImageTextExtraction\\wwwroot\\ExtractedText.docx",
+      "SourceId": "ImageTextExtraction",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\ProjectModule\\ProjectCode\\ImageTextExtraction\\wwwroot\\",
+      "BasePath": "_content/ImageTextExtraction",
+      "RelativePath": "ExtractedText.docx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ExtractedText.docx"
     },
     {
       "Identity": "C:\\Users\\USER\\Desktop\\ProjectModule\\ProjectCode\\ImageTextExtraction\\wwwroot\\favicon.ico",

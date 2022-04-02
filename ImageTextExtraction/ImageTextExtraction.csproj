@@ -14,9 +14,20 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="7.1.0" />
-    <PackageReference Include="Aspose.Words" Version="22.3.0" />
-    <PackageReference Include="AWSSDK.S3" Version="3.7.8.10" />
-    <PackageReference Include="AWSSDK.Textract" Version="3.7.4.10" />
+    <PackageReference Include="Aspose.Words" Version="22.4.0" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.8.15" />
+    <PackageReference Include="AWSSDK.Textract" Version="3.7.4.15" />
     <PackageReference Include="itext7" Version="7.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
   </ItemGroup>
 </Project>
