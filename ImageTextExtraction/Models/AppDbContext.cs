@@ -18,7 +18,9 @@ namespace ImageTextExtraction.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            string connectionString = "Host=user-documents.cx2fek4ozu91.eu-west-1.rds.amazonaws.com;Port=1433;Username=admin;Password=0151nK**n*y;Database=user-documents;";
+            options.UseSqlServer(connectionString);
         }
 
         public virtual DbSet<UserDocument> Documents { get; set; }
