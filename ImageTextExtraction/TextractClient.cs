@@ -13,17 +13,6 @@ public class TextractClient
     List<string> blockText = new List<string>();
     List<string> lineText = new List<string>();
 
-    //static async Task Main(string[] args)
-    //{
-    //    try {
-
-    //        await StartDetectAsync();
-    //    } 
-    //    catch(Exception e)
-    //    {
-    //        Console.WriteLine(e.Message);
-    //    }
-    //}
 
     public async Task StartDetectAsync()
     {
@@ -109,13 +98,13 @@ public class TextractClient
         }
     }
 
-    public List<string> getBlockText()
+    public List<string> GetBlockText()
     {
         return this.blockText;
     }
 
-    public List<string> getLineText()
-    {
+    public List<string> GetLineText()
+    { 
         return this.lineText;
     }
  }

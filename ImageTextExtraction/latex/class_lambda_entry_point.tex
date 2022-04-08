@@ -1,0 +1,65 @@
+\hypertarget{class_lambda_entry_point}{}\doxysection{Lambda\+Entry\+Point Class Reference}
+\label{class_lambda_entry_point}\index{LambdaEntryPoint@{LambdaEntryPoint}}
+
+
+This class extends from APIGateway\+Proxy\+Function which contains the method Function\+Handler\+Async which is the actual Lambda function entry point. The Lambda handler field should be set to  
+
+
+Inheritance diagram for Lambda\+Entry\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lambda_entry_point}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_lambda_entry_point_ac82c2a260be7561b375f716a3a32ab6d}{Init}} (IWeb\+Host\+Builder builder)
+\begin{DoxyCompactList}\small\item\em The builder has configuration, logging and Amazon API Gateway already configured. The startup class needs to be configured in this method using the Use\+Startup$<$$>$() method. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_lambda_entry_point_a2679db955ddff57cc0457703546f1627}{Init}} (IHost\+Builder builder)
+\begin{DoxyCompactList}\small\item\em Use this override to customize the services registered with the IHost\+Builder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class extends from APIGateway\+Proxy\+Function which contains the method Function\+Handler\+Async which is the actual Lambda function entry point. The Lambda handler field should be set to 
+
+Image\+Text\+Extraction\+::\+Image\+Text\+Extraction.\+Lambda\+Entry\+Point\+::\+Function\+Handler\+Async 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lambda_entry_point_a2679db955ddff57cc0457703546f1627}\label{class_lambda_entry_point_a2679db955ddff57cc0457703546f1627}} 
+\index{LambdaEntryPoint@{LambdaEntryPoint}!Init@{Init}}
+\index{Init@{Init}!LambdaEntryPoint@{LambdaEntryPoint}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override void Lambda\+Entry\+Point.\+Init (\begin{DoxyParamCaption}\item[{IHost\+Builder}]{builder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Use this override to customize the services registered with the IHost\+Builder. 
+
+It is recommended not to call Configure\+Web\+Host\+Defaults to configure the IWeb\+Host\+Builder inside this method. Instead customize the IWeb\+Host\+Builder in the \mbox{\hyperlink{class_lambda_entry_point_ac82c2a260be7561b375f716a3a32ab6d}{Init(\+IWeb\+Host\+Builder)}} overload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em builder} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lambda_entry_point_ac82c2a260be7561b375f716a3a32ab6d}\label{class_lambda_entry_point_ac82c2a260be7561b375f716a3a32ab6d}} 
+\index{LambdaEntryPoint@{LambdaEntryPoint}!Init@{Init}}
+\index{Init@{Init}!LambdaEntryPoint@{LambdaEntryPoint}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override void Lambda\+Entry\+Point.\+Init (\begin{DoxyParamCaption}\item[{IWeb\+Host\+Builder}]{builder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The builder has configuration, logging and Amazon API Gateway already configured. The startup class needs to be configured in this method using the Use\+Startup$<$$>$() method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em builder} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_lambda_entry_point_8cs}{Lambda\+Entry\+Point.\+cs}}\end{DoxyCompactItemize}

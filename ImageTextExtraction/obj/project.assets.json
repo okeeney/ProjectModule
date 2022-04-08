@@ -6709,7 +6709,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
-            "version": "[6.0.2, 6.0.2]"
+            "version": "[6.0.3, 6.0.3]"
           }
         ],
         "frameworkReferences": {
@@ -6720,7 +6720,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -15,7 +15,6 @@ namespace ImageTextExtraction.Controllers
     public class HomeController : Controller
     {
         
-
         // GET: HomeController
 
         private readonly ILogger<HomeController> _logger;
@@ -75,7 +74,7 @@ namespace ImageTextExtraction.Controllers
             //Begin extraction
             await textractClient.StartDetectAsync();
 
-            List<string>extractedText = textractClient.getLineText();
+            List<string>extractedText = textractClient.GetLineText();
             string result = "";
 
             foreach (string s in extractedText)
@@ -83,6 +82,11 @@ namespace ImageTextExtraction.Controllers
                 result += s + "\n";
             }
             ViewData["result"] = result;
+
+            UserDocument userDocument = new UserDocument();
+            userDocument.DocumentBody = result;
+
+            ViewData["userDocument"] = userDocument;
             
             return View();
         }

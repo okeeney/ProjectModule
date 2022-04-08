@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JsN/5LztmJpoMsQ8ebcKIkoEPVQTaA1aTcXwtLAI2K9RQyfS4ugZ8Ph2YBvEP6nCBwUU5TwYLBDAaYUaRdFq7g==",
+  "dgSpecHash": "7cK/GE+ObRP2DilDHA7hDKwiKMVB6jG0nER/t+k/f1b+wGVZR9YpX1H1f/QOYMuNK7rLQDjwdSxU+qmT+IOeVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Desktop\\ProjectModule\\ProjectCode\\ImageTextExtraction\\ImageTextExtraction.csproj",
   "expectedPackageFiles": [
@@ -130,7 +130,7 @@
     "C:\\Users\\USER\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.2\\microsoft.netcore.app.crossgen2.win-x64.6.0.2.nupkg.sha512"
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.3\\microsoft.netcore.app.crossgen2.win-x64.6.0.3.nupkg.sha512"
   ],
   "logs": []
 }

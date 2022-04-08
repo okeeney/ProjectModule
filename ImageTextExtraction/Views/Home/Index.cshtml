@@ -3,9 +3,11 @@
 @model FileUploadFormModel 
 
 
+
 @{
     ViewData["Title"] = "Home Page";
     var output = ViewData["result"];
+    var userDoc = ViewData["userDocument"];
 }
 
 
@@ -29,11 +31,16 @@
 
 <hr />
 
+@using(Html.BeginForm())
+{
+    
+}
 
 <p><label>Give the extraction a title: <input type="text" id="text-title"/></label></p>
 <textarea rows="10" cols="100" id="display-text">@output</textarea> <br />
 <p><input type="submit" value="Export to .pdf" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
 <p><input type="submit" value="Export to .docx" id="exportDOCX" class="button" onclick="location.href='@Url.Action("CreateDocx", "Home", new {output = @output})'"/></p>
+<p><input type="submit" value="Commit to database" id="commitDb" class="button" onclick="location.href='@Url.Action("UpdateDb", "Home", new {output = @output}, new {title = })'"</p>
 
 
 
