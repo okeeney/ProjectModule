@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\ProjectModule\\ProjectCode\\POCTest\\POCTest.csproj": {}
+    "C:\\Users\\oisin\\Desktop\\ProjectModule\\POCTest\\POCTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\ProjectModule\\ProjectCode\\POCTest\\POCTest.csproj": {
+    "C:\\Users\\oisin\\Desktop\\ProjectModule\\POCTest\\POCTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\ProjectModule\\ProjectCode\\POCTest\\POCTest.csproj",
+        "projectUniqueName": "C:\\Users\\oisin\\Desktop\\ProjectModule\\POCTest\\POCTest.csproj",
         "projectName": "POCTest",
-        "projectPath": "C:\\Users\\USER\\Desktop\\ProjectModule\\ProjectCode\\POCTest\\POCTest.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\ProjectModule\\ProjectCode\\POCTest\\obj\\",
+        "projectPath": "C:\\Users\\oisin\\Desktop\\ProjectModule\\POCTest\\POCTest.csproj",
+        "packagesPath": "C:\\Users\\oisin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\oisin\\Desktop\\ProjectModule\\POCTest\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\oisin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

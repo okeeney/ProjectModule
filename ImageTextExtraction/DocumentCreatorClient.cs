@@ -1,13 +1,7 @@
 ﻿using iText.Kernel.Pdf;
 using iText.Layout;
-using iText.Layout.Element;
 using iText.Layout.Properties;
-using System.Diagnostics;
-using System.IO;
-using Aspose.Words;
-using Document = iText.Layout.Document;
-using WordDocument = Aspose.Words.Document;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 
 namespace ImageTextExtraction
 {
@@ -31,12 +25,32 @@ namespace ImageTextExtraction
             return stream.ToArray();
         }
 
-        public void GenerateDocx(string text)
+        public void GenerateTxt(string text)
         {
-            var doc = new WordDocument();
-            var builder = new DocumentBuilder(doc);
-            builder.Write(text);
-            doc.Save("wwwroot\\ExtractedText.docx");
+            //var doc = new WordDocument();
+            //var builder = new DocumentBuilder(doc);
+            //builder.Write(text);
+            //doc.Save("wwwroot\\ExtractedText.docx");
+
+            string fileName = @"wwwroot\\ExtractedText.txt";
+
+            try
+            {
+                if (File.Exists(fileName))
+                {
+                    File.Delete(fileName);
+                }
+
+                using (FileStream fs = File.Create(fileName))
+                {
+                    byte[] textBody = new UTF8Encoding(true).GetBytes(text);
+                    fs.Write(textBody, 0, textBody.Length);
+                }
+            } 
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
         }
 

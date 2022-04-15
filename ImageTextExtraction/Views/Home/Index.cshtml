@@ -8,6 +8,8 @@
     ViewData["Title"] = "Home Page";
     var output = ViewData["result"];
     var userDoc = ViewData["userDocument"];
+
+    
 }
 
 
@@ -26,21 +28,29 @@
             <input asp-for="@Model.FormFile" type="file" class="button"/>
         </dd>
     </dl>
-    <input asp-page-handler="Upload" class="button" type="submit" value="Upload" /> <p><b>Depending on the amount of text, this may take a few moments...</b></p>
+    <input asp-page-handler="UploadImage" class="button" type="submit" value="Upload" name="uploadImage" /> <p><b>Depending on the amount of text, this may take a few moments...</b></p>
  </form>
 
 <hr />
 
-@using(Html.BeginForm())
+
+@using (Html.BeginForm("DbCommit", "Home", FormMethod.Post))
 {
-    
+     <p><label for="textTitle">Give the extraction a title: <input type="text" name="textTitle" value=""/></label></p>
+    <textarea name="textBody" rows="10" cols="100" id="display-text">@output</textarea>
+    <p><input type="submit" value="Commit to DB" name="commitDb" class="button" /></p>
 }
 
-<p><label>Give the extraction a title: <input type="text" id="text-title"/></label></p>
-<textarea rows="10" cols="100" id="display-text">@output</textarea> <br />
-<p><input type="submit" value="Export to .pdf" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
-<p><input type="submit" value="Export to .docx" id="exportDOCX" class="button" onclick="location.href='@Url.Action("CreateDocx", "Home", new {output = @output})'"/></p>
-<p><input type="submit" value="Commit to database" id="commitDb" class="button" onclick="location.href='@Url.Action("UpdateDb", "Home", new {output = @output}, new {title = })'"</p>
+<br />
+
+<div class="buttonContainer">
+    <label>Export to Document:</label>
+    <p></p>
+    <p><input type="submit" value="Export to .pdf" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
+    <p><input type="submit" value="Export to .txt" id="exportDOCX" class="button" onclick="location.href='@Url.Action("CreateTxt", "Home", new {output = @output})'"/></p>
+</div>
+
+
 
 
 

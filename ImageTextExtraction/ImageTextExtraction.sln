@@ -5,9 +5,7 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageTextExtraction", "ImageTextExtraction.csproj", "{6CF7880B-174C-4988-A9CF-117619227940}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextractConsoleClient", "..\..\POC\TextractConsoleClient\TextractConsoleClient.csproj", "{6BC6756E-437C-43D0-99F1-EE17FE33A500}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POCTest", "..\POCTest\POCTest.csproj", "{CBEB3B23-8407-4A6E-B56B-70245776301F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POCTest", "..\POCTest\POCTest.csproj", "{CBEB3B23-8407-4A6E-B56B-70245776301F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{6CF7880B-174C-4988-A9CF-117619227940}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CF7880B-174C-4988-A9CF-117619227940}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CF7880B-174C-4988-A9CF-117619227940}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6BC6756E-437C-43D0-99F1-EE17FE33A500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BC6756E-437C-43D0-99F1-EE17FE33A500}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BC6756E-437C-43D0-99F1-EE17FE33A500}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BC6756E-437C-43D0-99F1-EE17FE33A500}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBEB3B23-8407-4A6E-B56B-70245776301F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBEB3B23-8407-4A6E-B56B-70245776301F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBEB3B23-8407-4A6E-B56B-70245776301F}.Release|Any CPU.ActiveCfg = Release|Any CPU

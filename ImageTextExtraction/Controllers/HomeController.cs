@@ -101,18 +101,32 @@ namespace ImageTextExtraction.Controllers
 
         }
 
-        public IActionResult CreateDocx(string output)
+        public IActionResult CreateTxt(string output)
         {
             string wwwPath = this.Environment.WebRootPath;
             DocumentCreatorClient docClient = new DocumentCreatorClient();
-            docClient.GenerateDocx(output);
-            byte[] stream = System.IO.File.ReadAllBytes(wwwPath + "\\ExtractedText.docx");
+            docClient.GenerateTxt(output);
+            byte[] stream = System.IO.File.ReadAllBytes(wwwPath + "\\ExtractedText.txt");
 
-            return File(stream, "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "ExtractedText.docx");
+            return File(stream, "text/plain", "ExtractedText.txt");
         }
 
+        [HttpPost]
+        public void DbCommit()
+        {
+            AppDbContext appDbContext = new AppDbContext();
+            DocumentRepository repo = new DocumentRepository(appDbContext);
 
+            UserDocument userDocument = new UserDocument();
 
+            string textTitle = Request.Form["textTitle"];
+            string testBody = Request.Form["textBody"];
+
+            userDocument.DocumentTitle = textTitle;
+            userDocument.DocumentBody = testBody;
+
+            repo.AddDoc(userDocument);
+        }
        
     }
 
