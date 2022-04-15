@@ -112,20 +112,24 @@ namespace ImageTextExtraction.Controllers
         }
 
         [HttpPost]
-        public void DbCommit()
+        public void DbCommit(string Title, string Body)
         {
             AppDbContext appDbContext = new AppDbContext();
             DocumentRepository repo = new DocumentRepository(appDbContext);
 
             UserDocument userDocument = new UserDocument();
 
-            string textTitle = Request.Form["textTitle"];
-            string testBody = Request.Form["textBody"];
+            //string textTitle = Request.Form["textTitle"];
+            //string testBody = Request.Form["textBody"];
 
-            userDocument.DocumentTitle = textTitle;
-            userDocument.DocumentBody = testBody;
+            //userDocument.DocumentTitle = textTitle;
+            //userDocument.DocumentBody = testBody;
+
+            userDocument.DocumentTitle = Title;
+            userDocument.DocumentBody = Body;
 
             repo.AddDoc(userDocument);
+
         }
        
     }

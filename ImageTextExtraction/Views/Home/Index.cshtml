@@ -11,7 +11,22 @@
 
     
 }
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+   $(document).ready(function () {
+       $("#commitBtn").click(function () {
+           $.ajax(
+               {
+                   type: "POST",
+                   url: "Home/DbCommit",
+                   data: {
+                       Title: $("#text-title").val(),
+                       Body: $("#display-text").val()
+                   }
+               });
+       });
+   });
+</script>
 
 <div class="text-center">
     <h1 class="display-4">Image Text Extraction Utility</h1>
@@ -33,13 +48,16 @@
 
 <hr />
 
+<p><label for="textTitle">Give the extraction a title: <input type="text" name="textTitle" id="text-title" value=""/></label></p>
+ <textarea name="textBody" rows="10" cols="100" id="display-text">@output</textarea>
+<p><input type="submit" value="Commit to DB" name="commitDb" class="button" id="commitBtn"/></p>
 
-@using (Html.BeginForm("DbCommit", "Home", FormMethod.Post))
+@*@using (Html.BeginForm("DbCommit", "Home", FormMethod.Post))
 {
-     <p><label for="textTitle">Give the extraction a title: <input type="text" name="textTitle" value=""/></label></p>
+     <p><label for="textTitle">Give the extraction a title: <input type="text" name="textTitle" id="text-title" value=""/></label></p>
     <textarea name="textBody" rows="10" cols="100" id="display-text">@output</textarea>
-    <p><input type="submit" value="Commit to DB" name="commitDb" class="button" /></p>
-}
+    <p><input type="submit" value="Commit to DB" name="commitDb" class="button" id="commitBtn"/></p>
+}*@
 
 <br />
 
@@ -49,7 +67,6 @@
     <p><input type="submit" value="Export to .pdf" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
     <p><input type="submit" value="Export to .txt" id="exportDOCX" class="button" onclick="location.href='@Url.Action("CreateTxt", "Home", new {output = @output})'"/></p>
 </div>
-
 
 
 
