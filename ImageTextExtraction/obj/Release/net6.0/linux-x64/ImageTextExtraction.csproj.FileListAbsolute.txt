@@ -67,8 +67,6 @@ C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linu
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\Amazon.Lambda.Core.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\Amazon.Lambda.Logging.AspNetCore.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\Amazon.Lambda.Serialization.SystemTextJson.dll
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\Aspose.Words.Pdf2Word.dll
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\Aspose.Words.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\AWSSDK.Core.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\AWSSDK.S3.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\AWSSDK.Textract.dll
@@ -101,7 +99,6 @@ C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linu
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\Microsoft.Win32.SystemEvents.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\Newtonsoft.Json.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\BouncyCastle.Crypto.dll
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\SkiaSharp.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\System.Configuration.ConfigurationManager.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\System.Drawing.Common.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\linux-x64\System.IdentityModel.Tokens.Jwt.dll

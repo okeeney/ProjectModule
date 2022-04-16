@@ -13,7 +13,6 @@
           "AWSSDK.S3": "3.7.8.18",
           "AWSSDK.Textract": "3.7.4.15",
           "Amazon.Lambda.AspNetCoreServer": "7.1.0",
-          "Aspose.Words": "22.4.0",
           "Microsoft.EntityFrameworkCore": "6.0.4",
           "Microsoft.EntityFrameworkCore.Design": "6.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.3",
@@ -86,25 +85,6 @@
           "lib/net6.0/Amazon.Lambda.Serialization.SystemTextJson.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Aspose.Words/22.4.0": {
-        "dependencies": {
-          "Microsoft.Win32.Registry": "4.7.0",
-          "SkiaSharp": "2.80.1",
-          "System.Reflection.Emit": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
-          "System.Text.Encoding.CodePages": "4.7.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Aspose.Words.Pdf2Word.dll": {
-            "assemblyVersion": "22.4.0.0",
-            "fileVersion": "22.4.0.0"
-          },
-          "lib/netstandard2.0/Aspose.Words.dll": {
-            "assemblyVersion": "22.4.0.0",
-            "fileVersion": "22.4.0.0"
           }
         }
       },
@@ -619,17 +599,6 @@
           "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.0"
         }
       },
-      "SkiaSharp/2.80.1": {
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "runtime": {
-          "lib/netstandard2.0/SkiaSharp.dll": {
-            "assemblyVersion": "2.80.0.0",
-            "fileVersion": "2.80.1.0"
-          }
-        }
-      },
       "System.AppContext/4.1.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -767,8 +736,8 @@
           "System.Linq.Expressions": "4.1.0",
           "System.ObjectModel": "4.0.12",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit": "4.0.1",
+          "System.Reflection.Emit.ILGeneration": "4.0.1",
           "System.Reflection.Primitives": "4.3.0",
           "System.Reflection.TypeExtensions": "4.1.0",
           "System.Resources.ResourceManager": "4.3.0",
@@ -853,8 +822,8 @@
           "System.Linq": "4.3.0",
           "System.ObjectModel": "4.0.12",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit": "4.0.1",
+          "System.Reflection.Emit.ILGeneration": "4.0.1",
           "System.Reflection.Emit.Lightweight": "4.0.1",
           "System.Reflection.Extensions": "4.0.1",
           "System.Reflection.Primitives": "4.3.0",
@@ -865,7 +834,6 @@
           "System.Threading": "4.3.0"
         }
       },
-      "System.Memory/4.5.3": {},
       "System.ObjectModel/4.0.12": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -892,16 +860,16 @@
           "runtime.any.System.Reflection": "4.3.0"
         }
       },
-      "System.Reflection.Emit/4.3.0": {
+      "System.Reflection.Emit/4.0.1": {
         "dependencies": {
           "System.IO": "4.3.0",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.0.1",
           "System.Reflection.Primitives": "4.3.0",
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Reflection.Emit.ILGeneration/4.3.0": {
+      "System.Reflection.Emit.ILGeneration/4.0.1": {
         "dependencies": {
           "System.Reflection": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
@@ -911,7 +879,7 @@
       "System.Reflection.Emit.Lightweight/4.0.1": {
         "dependencies": {
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.0.1",
           "System.Reflection.Primitives": "4.3.0",
           "System.Runtime": "4.3.0"
         }
@@ -1289,13 +1257,6 @@
       "sha512": "sha512-ENIKiMBVUegIbwHwg4P0XjJKXazTlCS05bqRKrn9BTUWDZQjPp5RaFs1h2+22H4SiqWosNxKrNCeiXyHJnwOHw==",
       "path": "amazon.lambda.serialization.systemtextjson/2.2.0",
       "hashPath": "amazon.lambda.serialization.systemtextjson.2.2.0.nupkg.sha512"
-    },
-    "Aspose.Words/22.4.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-nghtrgTt0lFmsnhY3OvddKTZUeCSlv9vhx4LPWQ6tV+y9GbLF+23IFIm1NHVlsmwn2YBdERvi7I0Wok793xrug==",
-      "path": "aspose.words/22.4.0",
-      "hashPath": "aspose.words.22.4.0.nupkg.sha512"
     },
     "AWSSDK.Core/3.7.10.6": {
       "type": "package",
@@ -1815,13 +1776,6 @@
       "path": "runtime.unix.system.runtime.extensions/4.3.0",
       "hashPath": "runtime.unix.system.runtime.extensions.4.3.0.nupkg.sha512"
     },
-    "SkiaSharp/2.80.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-CiQwnDzG+1JNGzjAN9G/9n/lJgUVA/NPOFgSlEtu6c7qQ0O7P1tMjrXp/+PtWfX0xyyY9ABsFAZK2kW34U7r/A==",
-      "path": "skiasharp/2.80.1",
-      "hashPath": "skiasharp.2.80.1.nupkg.sha512"
-    },
     "System.AppContext/4.1.0": {
       "type": "package",
       "serviceable": true,
@@ -1976,13 +1930,6 @@
       "path": "system.linq.expressions/4.1.0",
       "hashPath": "system.linq.expressions.4.1.0.nupkg.sha512"
     },
-    "System.Memory/4.5.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
-      "path": "system.memory/4.5.3",
-      "hashPath": "system.memory.4.5.3.nupkg.sha512"
-    },
     "System.ObjectModel/4.0.12": {
       "type": "package",
       "serviceable": true,
@@ -2004,19 +1951,19 @@
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
     },
-    "System.Reflection.Emit/4.3.0": {
+    "System.Reflection.Emit/4.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
-      "path": "system.reflection.emit/4.3.0",
-      "hashPath": "system.reflection.emit.4.3.0.nupkg.sha512"
+      "sha512": "sha512-P2wqAj72fFjpP6wb9nSfDqNBMab+2ovzSDzUZK7MVIm54tBJEPr9jWfSjjoTpPwj1LeKcmX3vr0ttyjSSFM47g==",
+      "path": "system.reflection.emit/4.0.1",
+      "hashPath": "system.reflection.emit.4.0.1.nupkg.sha512"
     },
-    "System.Reflection.Emit.ILGeneration/4.3.0": {
+    "System.Reflection.Emit.ILGeneration/4.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-59tBslAk9733NXLrUJrwNZEzbMAcu8k344OYo+wfSVygcgZ9lgBdGIzH/nrg3LYhXceynyvTc8t5/GD4Ri0/ng==",
-      "path": "system.reflection.emit.ilgeneration/4.3.0",
-      "hashPath": "system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512"
+      "sha512": "sha512-Ov6dU8Bu15Bc7zuqttgHF12J5lwSWyTf1S+FJouUXVMSqImLZzYaQ+vRr1rQ0OZ0HqsrwWl4dsKHELckQkVpgA==",
+      "path": "system.reflection.emit.ilgeneration/4.0.1",
+      "hashPath": "system.reflection.emit.ilgeneration.4.0.1.nupkg.sha512"
     },
     "System.Reflection.Emit.Lightweight/4.0.1": {
       "type": "package",

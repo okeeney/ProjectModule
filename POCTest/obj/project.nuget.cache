@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kZsX5wWmYElJcG7T1GBSlsjetu2rTYD3x13PjC+Gxzpg4NNehfube7nTmQajsDGRg9PUojRhSMkwfrjMwJWjsg==",
+  "dgSpecHash": "lYZD1knhIhc8k+vEm9oi5j7rSD0WseOggcWU8u1hFo5seGmmeTTqqi166IuVn3uA2mYSgomd53BNrRSWkSLe9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\oisin\\Desktop\\ProjectModule\\POCTest\\POCTest.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\oisin\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.4\\microsoft.netcore.app.host.linux-x64.6.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

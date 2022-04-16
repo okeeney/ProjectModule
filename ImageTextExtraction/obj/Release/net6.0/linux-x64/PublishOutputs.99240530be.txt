@@ -12,8 +12,6 @@ C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publ
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.Core.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.Logging.AspNetCore.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\Amazon.Lambda.Serialization.SystemTextJson.dll
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\Aspose.Words.Pdf2Word.dll
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\Aspose.Words.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\AWSSDK.Core.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\AWSSDK.S3.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\AWSSDK.Textract.dll
@@ -43,7 +41,6 @@ C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publ
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\Microsoft.Win32.SystemEvents.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\Newtonsoft.Json.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\BouncyCastle.Crypto.dll
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\SkiaSharp.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\System.Configuration.ConfigurationManager.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\System.Drawing.Common.dll
 C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction\bin\Release\net6.0\publish\System.IdentityModel.Tokens.Jwt.dll

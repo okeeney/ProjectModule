@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Yx+G5alYUOA23cYR/Kb45YqPed+M2vwIOGYl2k93/yQ=",
+  "Hash": "/suh/9pzZpDJho03DchCdrvG9QA+mecIJqJWGfEoSFQ=",
   "Source": "ImageTextExtraction",
   "BasePath": "_content/ImageTextExtraction",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ExtractedText.docx"
+    },
+    {
+      "Identity": "C:\\Users\\oisin\\Desktop\\ProjectModule\\ImageTextExtraction\\wwwroot\\ExtractedText.txt",
+      "SourceId": "ImageTextExtraction",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\oisin\\Desktop\\ProjectModule\\ImageTextExtraction\\wwwroot\\",
+      "BasePath": "_content/ImageTextExtraction",
+      "RelativePath": "ExtractedText.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ExtractedText.txt"
     },
     {
       "Identity": "C:\\Users\\oisin\\Desktop\\ProjectModule\\ImageTextExtraction\\wwwroot\\favicon.ico",
