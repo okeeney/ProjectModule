@@ -25,6 +25,8 @@
                alert("Please give the text a title");
            }
            else {
+               alert("Record committed...");
+
                $.ajax(
                {
                    type: "POST",
@@ -35,15 +37,6 @@
                    }
                });
            }
-           //$.ajax(
-           //    {
-           //        type: "POST",
-           //        url: "Home/DbCommit",
-           //        data: {
-           //            Title: $("#text-title").val(),
-           //            Body: $("#display-text").val()
-           //        }
-           //    });
        });
    });
 </script>
@@ -75,9 +68,9 @@
 <p><input type="submit" value="View Records" name="viewRecords" id="recordsBtn" onclick="location.href='@Url.Action("Records", "Home")'"></p>
 
 
-<br />
+<hr />
 
-<div class="buttonContainer">
+<div class="exportContainer">
     <label>Export Options:</label>
     <p></p>
     <p><input type="submit" value="Export to .pdf" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
