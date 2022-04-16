@@ -24,5 +24,10 @@
             _appDbContext.Documents.Add(userDocument);
             _appDbContext.SaveChanges();
         }
+
+        public void DeleteDoc(UserDocument userDocument)
+        {
+            _appDbContext.Documents.Remove(userDocument);
+        }
     }
 }

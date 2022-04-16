@@ -17,3 +17,14 @@ body {
   margin-bottom: 60px;
 }
 
+
+
+table, th, td {
+    border: 2px solid;
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    background-color: lightgray;
+}

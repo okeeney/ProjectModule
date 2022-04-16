@@ -119,19 +119,31 @@ namespace ImageTextExtraction.Controllers
 
             UserDocument userDocument = new UserDocument();
 
-            //string textTitle = Request.Form["textTitle"];
-            //string testBody = Request.Form["textBody"];
-
-            //userDocument.DocumentTitle = textTitle;
-            //userDocument.DocumentBody = testBody;
-
             userDocument.DocumentTitle = Title;
             userDocument.DocumentBody = Body;
 
             repo.AddDoc(userDocument);
 
         }
-       
+
+        public IActionResult Records()
+        {
+            AppDbContext dbContext = new AppDbContext();
+            DocumentRepository repo = new DocumentRepository(dbContext);
+            return View(repo.AllDocs);
+        }
+
+        [HttpPost,ActionName("DeleteRecord")]
+        public IActionResult Record(int docId)
+        {
+            AppDbContext dbContext = new AppDbContext();
+            DocumentRepository repo = new DocumentRepository(dbContext);
+            UserDocument userDocument = repo.GetDocById(docId);
+            dbContext.Documents.Remove(userDocument);
+            dbContext.SaveChanges();
+            return View();
+        }
+
     }
 
     

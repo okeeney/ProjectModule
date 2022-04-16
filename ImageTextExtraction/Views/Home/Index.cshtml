@@ -15,7 +15,17 @@
 <script>
    $(document).ready(function () {
        $("#commitBtn").click(function () {
-           $.ajax(
+           if($("#text-title").val() == '' && $("#display-text").val() == '') {
+               alert("Text fields are empty!");
+           }
+           else if($("#text-title").val() != '' && $("#display-text").val() == '') {
+               alert("No text has been extracted!");
+           }
+           else if($("#text-title").val() == '' && $("#display-text").val() != '') {
+               alert("Please give the text a title");
+           }
+           else {
+               $.ajax(
                {
                    type: "POST",
                    url: "Home/DbCommit",
@@ -24,6 +34,16 @@
                        Body: $("#display-text").val()
                    }
                });
+           }
+           //$.ajax(
+           //    {
+           //        type: "POST",
+           //        url: "Home/DbCommit",
+           //        data: {
+           //            Title: $("#text-title").val(),
+           //            Body: $("#display-text").val()
+           //        }
+           //    });
        });
    });
 </script>
@@ -52,17 +72,13 @@
  <textarea name="textBody" rows="10" cols="100" id="display-text">@output</textarea>
 <p><input type="submit" value="Commit to DB" name="commitDb" class="button" id="commitBtn"/></p>
 
-@*@using (Html.BeginForm("DbCommit", "Home", FormMethod.Post))
-{
-     <p><label for="textTitle">Give the extraction a title: <input type="text" name="textTitle" id="text-title" value=""/></label></p>
-    <textarea name="textBody" rows="10" cols="100" id="display-text">@output</textarea>
-    <p><input type="submit" value="Commit to DB" name="commitDb" class="button" id="commitBtn"/></p>
-}*@
+<p><input type="submit" value="View Records" name="viewRecords" id="recordsBtn" onclick="location.href='@Url.Action("Records", "Home")'"></p>
+
 
 <br />
 
 <div class="buttonContainer">
-    <label>Export to Document:</label>
+    <label>Export Options:</label>
     <p></p>
     <p><input type="submit" value="Export to .pdf" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
     <p><input type="submit" value="Export to .txt" id="exportDOCX" class="button" onclick="location.href='@Url.Action("CreateTxt", "Home", new {output = @output})'"/></p>
