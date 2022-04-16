@@ -133,15 +133,15 @@ namespace ImageTextExtraction.Controllers
             return View(repo.AllDocs);
         }
 
-        [HttpPost,ActionName("DeleteRecord")]
-        public IActionResult Record(int docId)
+        //[HttpPost,ActionName("DeleteRecord")]
+        public IActionResult DeleteRecord(int docId)
         {
             AppDbContext dbContext = new AppDbContext();
             DocumentRepository repo = new DocumentRepository(dbContext);
             UserDocument userDocument = repo.GetDocById(docId);
             dbContext.Documents.Remove(userDocument);
             dbContext.SaveChanges();
-            return View();
+            return RedirectToAction("Records");
         }
 
     }
