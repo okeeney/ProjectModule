@@ -26,7 +26,8 @@
         "Policies": [
           "AWSLambda_FullAccess",
           "AmazonS3FullAccess",
-          "AmazonTextractFullAccess"
+          "AmazonTextractFullAccess",
+          "AmazonRDSFullAccess"
         ],
         "Environment": {
           "Variables": {

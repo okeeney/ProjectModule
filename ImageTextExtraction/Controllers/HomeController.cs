@@ -51,79 +51,83 @@ namespace ImageTextExtraction.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(FileUploadFormModel FileUpload)
         {
-            string bucketName = "oisinsapps";
-            string fileKey = "temp";
-
-            using (var memoryStream = new MemoryStream())
+            if(FileUpload.FormFile == null)
             {
-                await FileUpload.FormFile.CopyToAsync(memoryStream);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                string bucketName = "oisinsapps";
+                string fileKey = "temp";
 
-                if(memoryStream.Length < 10000000)
+                using (var memoryStream = new MemoryStream())
                 {
-                    await S3Upload.UploadFileAsync(memoryStream, bucketName, fileKey);
+                    await FileUpload.FormFile.CopyToAsync(memoryStream);
+
+                    if (memoryStream.Length < 1000000)
+                    {
+                        await S3Upload.UploadFileAsync(memoryStream, bucketName, fileKey);
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("File", "The file is too large.");
+                    }
                 }
-                else
+
+                //Instantiate Textract local client
+                TextractClient textractClient = new TextractClient();
+                //Begin extraction
+                await textractClient.StartDetectAsync();
+
+                List<string> extractedText = textractClient.GetLineText();
+                string result = "";
+
+                foreach (string s in extractedText)
                 {
-                    ModelState.AddModelError("File", "The file is too large.");
+                    result += s + "\n";
                 }
+                ViewData["result"] = result;
+
+                UserDocument userDocument = new UserDocument();
+                userDocument.DocumentBody = result;
+
+                ViewData["userDocument"] = userDocument;
+
+                return View();
 
             }
-
-            //Instantiate Textract local client
-            TextractClient textractClient = new TextractClient();
-            //Begin extraction
-            await textractClient.StartDetectAsync();
-
-            List<string>extractedText = textractClient.GetLineText();
-            string result = "";
-
-            foreach (string s in extractedText)
-            {
-                result += s + "\n";
-            }
-            ViewData["result"] = result;
-
-            UserDocument userDocument = new UserDocument();
-            userDocument.DocumentBody = result;
-
-            ViewData["userDocument"] = userDocument;
-            
-            return View();
         }
 
         public IActionResult CreatePdf(string output)
         {
- 
-            DocumentCreatorClient docClient = new DocumentCreatorClient();
-            byte[] stream = docClient.GeneratePdf(output);
+            if(output == null)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                DocumentCreatorClient docClient = new DocumentCreatorClient();
+                byte[] stream = docClient.GeneratePdf(output);
 
-            return File(stream, "application/pdf", "ExtractedText.pdf");
-
+                return File(stream, "application/pdf", "ExtractedText.pdf");
+            }
+           
         }
 
         public IActionResult CreateTxt(string output)
         {
-            string wwwPath = this.Environment.WebRootPath;
-            DocumentCreatorClient docClient = new DocumentCreatorClient();
-            docClient.GenerateTxt(output);
-            byte[] stream = System.IO.File.ReadAllBytes(wwwPath + "\\ExtractedText.txt");
-
-            return File(stream, "text/plain", "ExtractedText.txt");
-        }
-
-        [HttpPost]
-        public void DbCommit(string Title, string Body)
-        {
-            AppDbContext appDbContext = new AppDbContext();
-            DocumentRepository repo = new DocumentRepository(appDbContext);
-
-            UserDocument userDocument = new UserDocument();
-
-            userDocument.DocumentTitle = Title;
-            userDocument.DocumentBody = Body;
-
-            repo.AddDoc(userDocument);
-
+            if(output == null)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                string wwwPath = this.Environment.WebRootPath;
+                DocumentCreatorClient docClient = new DocumentCreatorClient();
+                docClient.GenerateTxt(output);
+                byte[] stream = System.IO.File.ReadAllBytes(wwwPath + "\\ExtractedText.txt");
+                return File(stream, "text/plain", "ExtractedText.txt");
+            }
         }
 
         public IActionResult Records()
@@ -144,6 +148,30 @@ namespace ImageTextExtraction.Controllers
             return RedirectToAction("Records");
         }
 
+        [HttpPost]
+        public IActionResult DbCommitForm(IFormCollection collection)
+        {
+            AppDbContext appDbContext = new AppDbContext();
+            DocumentRepository repository = new DocumentRepository(appDbContext);   
+
+            UserDocument userDocument = new UserDocument();
+            userDocument.DocumentTitle = collection["textTitle"];
+            userDocument.DocumentBody = collection["textBody"];
+
+            if(userDocument.DocumentTitle != "" && userDocument.DocumentBody != "")
+            {
+                repository.AddDoc(userDocument);
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+            
+        }
+
+      
     }
 
     
