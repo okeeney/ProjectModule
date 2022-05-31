@@ -8,40 +8,6 @@
     var output = ViewData["result"];
     var userDoc = ViewData["userDocument"];
 }
-@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-   $(document).ready(function () {
-       $("#commitBtn").click(function () {
-           if($("#text-title").val() == '' && $("#display-text").val() == '') {
-               alert("Text fields are empty!");
-           }
-           else if($("#text-title").val() != '' && $("#display-text").val() == '') {
-               alert("No text has been extracted!");
-           }
-           else if($("#text-title").val() == '' && $("#display-text").val() != '') {
-               alert("Please give the text a title");
-           }
-           else {               
-               $.ajax(
-               {
-                   type: "POST",
-                   url: "Home/DbCommit",
-                   data: {
-                       Title: $("#text-title").val(),
-                       Body: $("#display-text").val()
-                   },
-                   success: function () {
-                       alert("The commit was successful!");
-                   },
-                   error: function (request, status, error) {
-                       alert(request.statusText + ", " + error);
-                       console.log(error + " - " + request.statusCode + " - " + request.statusText);
-                   }
-               });              
-           }
-       });
-   });
-</script>*@
 
 <div class="text-center">
     <h1 class="display-4">Image Text Extraction Utility</h1>
@@ -55,10 +21,11 @@
             <label asp-for="@Model.FormFile"></label>
         </dt>
         <dd>
-            <input asp-for="@Model.FormFile" type="file" class="button"/>
+            <input asp-for="@Model.FormFile" type="file" id="fileBtn"/>
+            
         </dd>
     </dl>
-    <input asp-page-handler="UploadImage" class="button" type="submit" value="Upload" name="uploadImage" /> <p><b>This may take a few moments...</b></p>
+    <input asp-page-handler="UploadImage" type="submit" class="btn btn-dark" value="Upload" name="uploadImage" /> <p><b>This may take a few moments...</b></p>
  </form>
 
 <hr />
@@ -67,18 +34,18 @@
 {
     <p><label for="textTitle">Give the extraction a title: <input type="text" name="textTitle" id="text-title" value=""/></label></p>
     <textarea name="textBody" rows="10" cols="100" id="display-text">@output</textarea>
-    <p><input type="submit" value="Commit to DB" name="commitDb" class="button" id="commitBtn"/></p>
+    <p><input type="submit" value="Commit to DB" name="commitDb" class="btn btn-dark" id="commitBtn"/></p>
 }
 
-<p><input type="submit" value="View Records" name="viewRecords" id="recordsBtn" onclick="location.href='@Url.Action("Records", "Home")'"></p>
+<p><input type="submit" value="View Records" name="viewRecords" class="btn btn-dark" id="recordsBtn" onclick="location.href='@Url.Action("Records", "Home")'"></p>
     
 <hr />
 
 <div class="exportContainer">
     <label>Export Options:</label>
     <p><b>The text fields must contain data to export a document...</b></p>
-    <p><input type="submit" value="Export to .pdf" id="exportPDF" class="button" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
-    <p><input type="submit" value="Export to .txt" id="exportDOCX" class="button" onclick="location.href='@Url.Action("CreateTxt", "Home", new {output = @output})'"/></p>
+    <p><input type="submit" value="Export to .pdf" id="exportPDF" class="btn btn-dark" onclick="location.href='@Url.Action("CreatePdf", "Home", new {output = @output})'"/></p>
+    <p><input type="submit" value="Export to .txt" id="exportDOCX" class="btn btn-dark" onclick="location.href='@Url.Action("CreateTxt", "Home", new {output = @output})'"/></p>
 </div>
 
 

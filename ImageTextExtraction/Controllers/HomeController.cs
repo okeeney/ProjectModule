@@ -1,12 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using POCTest.Models;
-using System.Diagnostics;
-using System.IO;
-using System.Net;
-using System.Threading.Tasks;
 using Amazon.S3;
-using Amazon.S3.Model;
-using Microsoft.Extensions.Logging;
 using ImageTextExtraction.Models;
 
 
@@ -14,7 +7,6 @@ namespace ImageTextExtraction.Controllers
 {
     public class HomeController : Controller
     {
-        
         // GET: HomeController
 
         private readonly ILogger<HomeController> _logger;
@@ -37,17 +29,8 @@ namespace ImageTextExtraction.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
+        
         [HttpPost]
         public async Task<IActionResult> Index(FileUploadFormModel FileUpload)
         {
@@ -118,7 +101,8 @@ namespace ImageTextExtraction.Controllers
         {
             if(output == null)
             {
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return NoContent();
             }
             else
             {
@@ -132,19 +116,19 @@ namespace ImageTextExtraction.Controllers
 
         public IActionResult Records()
         {
-            AppDbContext dbContext = new AppDbContext();
-            DocumentRepository repo = new DocumentRepository(dbContext);
+            AppDbContext appDbContext = new AppDbContext();
+            DocumentRepository repo = new DocumentRepository(appDbContext);
             return View(repo.AllDocs);
         }
 
         //[HttpPost,ActionName("DeleteRecord")]
         public IActionResult DeleteRecord(int docId)
         {
-            AppDbContext dbContext = new AppDbContext();
-            DocumentRepository repo = new DocumentRepository(dbContext);
+            AppDbContext appDbContext = new AppDbContext();
+            DocumentRepository repo = new DocumentRepository(appDbContext);
             UserDocument userDocument = repo.GetDocById(docId);
-            dbContext.Documents.Remove(userDocument);
-            dbContext.SaveChanges();
+            appDbContext.Documents.Remove(userDocument);
+            appDbContext.SaveChanges();
             return RedirectToAction("Records");
         }
 
@@ -153,7 +137,6 @@ namespace ImageTextExtraction.Controllers
         {
             AppDbContext appDbContext = new AppDbContext();
             DocumentRepository repository = new DocumentRepository(appDbContext);   
-
             UserDocument userDocument = new UserDocument();
             userDocument.DocumentTitle = collection["textTitle"];
             userDocument.DocumentBody = collection["textBody"];

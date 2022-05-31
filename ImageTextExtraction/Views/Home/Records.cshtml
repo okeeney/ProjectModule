@@ -1,11 +1,6 @@
 ﻿
 @model IEnumerable<ImageTextExtraction.Models.UserDocument>
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
-
 @{
 }
 
@@ -13,7 +8,7 @@
     <h1 class="display-4">Record Storage</h1>
 </div>
 
-<table id="documentRecords">
+<table id="documentRecords" class="table">
     <tr>
         <th>@Html.DisplayNameFor(model => model.DocumentId)</th>
 
@@ -21,7 +16,7 @@
 
         <th>@Html.DisplayNameFor(model => model.DocumentBody)</th>
 
-        <th>Modify</th>
+        <th>Actions</th>
 
     </tr>
     @foreach (var document in Model)
@@ -33,7 +28,9 @@
 
             <td>@Html.DisplayFor(modelItem => document.DocumentBody)</td>
 
-            <td><input type="button" value="Delete" id="deleteBtn" onclick="location.href='@Url.Action("DeleteRecord", "Home", new {docId = document.DocumentId})'"></td>
+            <td>
+                <input type="button" value="Delete" id="deleteBtn" class="btn btn-dark" onclick="location.href='@Url.Action("DeleteRecord", "Home", new {docId = document.DocumentId})'">         
+            </td>
         </tr>
     }
 </table>

@@ -9,6 +9,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 public class TextractClient
 {
+    //These arrays are responsible for storing text/data from the images
 	List<BlockType> blockTypes = new List<BlockType>();
     List<string> blockText = new List<string>();
     List<string> lineText = new List<string>();
@@ -19,13 +20,12 @@ public class TextractClient
         //My bucket on aws.amazon
         var s3Bucket = "oisinsapps";
 
-        //Image to be uploaded to S3 for textract processing
+        //Name of image to be located.
         var localFile = "temp";
 
         using(var textractClient = new AmazonTextractClient(RegionEndpoint.EUWest1))
         {
            
-
             Console.WriteLine("Start document text detection.");
             var startResponse = await textractClient.StartDocumentTextDetectionAsync(new StartDocumentTextDetectionRequest
             {
@@ -47,6 +47,7 @@ public class TextractClient
             };
 
             Console.WriteLine("Poll for detect job complete");
+
             //Poll till job is no longer inporgress
             GetDocumentTextDetectionResponse getDetectionResponse = null;
             do
@@ -56,6 +57,7 @@ public class TextractClient
             } while (getDetectionResponse.JobStatus == JobStatus.IN_PROGRESS);
 
             Console.WriteLine("Print out results if the job was successful.");
+
             //If the job succeeded, loop through results and print the detected text
             if(getDetectionResponse.JobStatus == JobStatus.SUCCEEDED)
             {
@@ -85,16 +87,19 @@ public class TextractClient
             }
             else
             {
+                //If the job failed print error message.
                 Console.WriteLine($"Job failed with message {getDetectionResponse.StatusMessage}");
             }
         }
     }
 
+    //This method returns individual words in array format.
     public List<string> GetBlockText()
     {
         return this.blockText;
     }
-
+    //This method returns lines of text as they apprear on the
+    //image in array format.
     public List<string> GetLineText()
     { 
         return this.lineText;

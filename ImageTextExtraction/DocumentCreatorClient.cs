@@ -27,11 +27,6 @@ namespace ImageTextExtraction
 
         public void GenerateTxt(string text)
         {
-            //var doc = new WordDocument();
-            //var builder = new DocumentBuilder(doc);
-            //builder.Write(text);
-            //doc.Save("wwwroot\\ExtractedText.docx");
-
             string fileName = @"wwwroot\\ExtractedText.txt";
 
             try
