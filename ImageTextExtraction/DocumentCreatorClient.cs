@@ -22,32 +22,5 @@ namespace ImageTextExtraction
 
             return stream.ToArray();
         }
-
-        public void GenerateTxt(string text)
-        {
-            string fileName = @$"wwwroot{System.IO.Path.DirectorySeparatorChar}ExtractedText.txt";
-
-            try
-            {
-                if (File.Exists(fileName))
-                {
-                    File.Delete(fileName);
-                }
-
-                using (FileStream fs = File.Create(fileName))
-                {
-                    byte[] textBody = new UTF8Encoding(true).GetBytes(text);
-                    fs.Write(textBody, 0, textBody.Length);
-                }
-            } 
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-        }
-
-        
-
     }
 }
