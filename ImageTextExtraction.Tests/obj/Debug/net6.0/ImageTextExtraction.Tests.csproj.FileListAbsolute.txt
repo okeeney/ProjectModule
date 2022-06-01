@@ -1,5 +1,0 @@
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction.Tests\obj\Debug\net6.0\ImageTextExtraction.Tests.csproj.AssemblyReference.cache
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction.Tests\obj\Debug\net6.0\ImageTextExtraction.Tests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction.Tests\obj\Debug\net6.0\ImageTextExtraction.Tests.AssemblyInfoInputs.cache
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction.Tests\obj\Debug\net6.0\ImageTextExtraction.Tests.AssemblyInfo.cs
-C:\Users\oisin\Desktop\ProjectModule\ImageTextExtraction.Tests\obj\Debug\net6.0\ImageTextExtraction.Tests.csproj.CoreCompileInputs.cache
