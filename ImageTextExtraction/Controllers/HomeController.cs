@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Amazon.S3;
 using ImageTextExtraction.Models;
-
+using System.Text;
 
 namespace ImageTextExtraction.Controllers
 {
@@ -89,9 +89,10 @@ namespace ImageTextExtraction.Controllers
             }
             else
             {
-                DocumentCreatorClient docClient = new DocumentCreatorClient();
-                byte[] stream = docClient.GeneratePdf(output);
-
+                //DocumentCreatorClient docClient = new DocumentCreatorClient();
+                //byte[] stream = docClient.GeneratePdf(output);
+                byte[] stream = Encoding.UTF8.GetBytes(output);
+                stream = System.IO.File.ReadAllBytes(@$"wwwroot{System.IO.Path.DirectorySeparatorChar}ExtractedText.pdf");
                 return File(stream, "application/pdf", "ExtractedText.pdf");
             }
            
@@ -106,11 +107,13 @@ namespace ImageTextExtraction.Controllers
             }
             else
             {
-                string wwwPath = this.Environment.WebRootPath;
-                DocumentCreatorClient docClient = new DocumentCreatorClient();
-                docClient.GenerateTxt(output);
-                byte[] stream = System.IO.File.ReadAllBytes(wwwPath + "\\ExtractedText.txt");
+                //string wwwPath = this.Environment.WebRootPath;
+                //DocumentCreatorClient docClient = new DocumentCreatorClient();
+                //docClient.GenerateTxt(output);
+                //byte[] stream = System.IO.File.ReadAllBytes(wwwPath + "\\ExtractedText.txt");
+                byte[] stream = System.IO.File.ReadAllBytes(@$"wwwroot{System.IO.Path.DirectorySeparatorChar}ExtractedText.txt");
                 return File(stream, "text/plain", "ExtractedText.txt");
+                
             }
         }
 

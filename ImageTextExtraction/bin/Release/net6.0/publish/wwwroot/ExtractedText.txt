@@ -1,19 +1,40 @@
-/**
-* Asset constructor.
-@param assetSymbol Stock sticker of asset
-@param purchaseDoteTime Date asset was purchased
-* @param purchaseUnits Number of units purchased in order
-*
-@param purchasePrice Price units were purchased at
-@param marketClient Market client to be used during purchase.
-*/
-usages 2° Oisin Keeney
-public Asset(String assetSymbol, long purchaseDateTime, double purchaseUnits,
-double purchasePrice, MarketClient marketClient) {
-this.assetSymbol = assetSymbol;
-this.originalpurchaseDateTime = purchaseDateTime;
-this.originalPurchaseUnits = purchaseUnits;
-this.originalPurchasePrice = purchasePrice;
-this.sellTransactions = new ArrayList<>();
-this.marketClient = marketClient;
-}
+"Five years! Summers and winters, five springs-and
+five autumns! The fall, too, can be good, especially here
+in Austria." He rose. "All right, Dorfrichter. That sums
+it up. I wish I could say it was good seeing you again,
+but under the circumstances that wouldn't be true."
+Dorfrichter rose, too, for the first time looking wor-
+ried. "You mean I won't be pardoned, sir?"
+"I didn't say that-"ITl have to think about it."
+"What is there to think, sir?" Dorfrichter asked
+bluntly. "The archduke made a deal with me. I had his
+promise. Without it, you couldn't have subjected me to
+four years in prison. Without his promise, I would have
+chosen the rope."
+"The archduke is dead," Kunze said.
+"Colonel Bardolff is still alive! He knows! Ask him!"
+"I don't have to. I knew about the deal before it was
+offered to you."
+"Well, then, there is no problem."
+"That's right, Dorfrichter. There's no problem."
+"So what's the decision?"
+Kunze gave him a long, taunting look.
+"You should know better than to ask, Dorfrichter. This
+is the army, remember? Your petition will be given due
+consideration, and you'll be notified of the decision by
+His Majesty's Military Chancery. I'm afraid that's all I
+can tell you now."
+He rang for the provost. Dorfrichter stood with
+hunched shoulders, his face sickly pale. His eyes followed
+the major across the room as though he were contem-
+plating a dash for the door or an attack at Kunze. At the
+entrance of the provost the tension in the room dissolved
+into a cold, undramatic leave-taking.
+Kunze watched the exit of prisoner and escort, dull-
+eyed, realizing only now how exhausted he was. He felt
+a trifle faint, and his shirt under his tunic was damp
+and clammy with perspiration. He decided to go home,
+take a hot bath, and forget about Peter Dorfrichter until
+the following morning.
+As he passed the desk on his way out, something caused
+415

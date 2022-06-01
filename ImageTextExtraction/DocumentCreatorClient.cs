@@ -15,9 +15,7 @@ namespace ImageTextExtraction
             var pdf = new PdfDocument(writer);
             var document = new Document(pdf);
 
-            iText.Layout.Element.Paragraph body = new iText.Layout.Element.Paragraph(text)
-                .SetTextAlignment(TextAlignment.CENTER)
-                .SetFontSize(12);
+            iText.Layout.Element.Paragraph body = new iText.Layout.Element.Paragraph(text);
 
             document.Add(body);
             document.Close();
@@ -27,7 +25,7 @@ namespace ImageTextExtraction
 
         public void GenerateTxt(string text)
         {
-            string fileName = @"wwwroot\\ExtractedText.txt";
+            string fileName = @$"wwwroot{System.IO.Path.DirectorySeparatorChar}ExtractedText.txt";
 
             try
             {

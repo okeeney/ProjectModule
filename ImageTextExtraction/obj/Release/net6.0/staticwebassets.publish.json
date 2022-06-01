@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/suh/9pzZpDJho03DchCdrvG9QA+mecIJqJWGfEoSFQ=",
+  "Hash": "n8n6s6fk8JxJZpwNU2nGMvb2b/Dogzfz6WmWH9eL7xc=",
   "Source": "ImageTextExtraction",
   "BasePath": "_content/ImageTextExtraction",
   "Mode": "Default",
@@ -66,23 +66,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
-    },
-    {
-      "Identity": "C:\\Users\\oisin\\Desktop\\ProjectModule\\ImageTextExtraction\\wwwroot\\ExtractedText.docx",
-      "SourceId": "ImageTextExtraction",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\oisin\\Desktop\\ProjectModule\\ImageTextExtraction\\wwwroot\\",
-      "BasePath": "_content/ImageTextExtraction",
-      "RelativePath": "ExtractedText.docx",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ExtractedText.docx"
     },
     {
       "Identity": "C:\\Users\\oisin\\Desktop\\ProjectModule\\ImageTextExtraction\\wwwroot\\ExtractedText.txt",
